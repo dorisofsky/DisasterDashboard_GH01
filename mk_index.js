@@ -12,7 +12,8 @@ var csv = d3.dsv(",","text/csv;charset=big5");
 
 
         data.forEach(function(d){
-          d.Time=timeparse(d.Time);
+            d.date=dateformat(timeparse(d.Time));
+            d.Time=timeparse(d.Time);
         });
 
         var ndx = crossfilter(data);
