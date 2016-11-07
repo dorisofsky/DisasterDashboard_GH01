@@ -75,7 +75,7 @@ var csv = d3.dsv(",","text/csv;charset=big5");
             .elasticY(true)
             .renderHorizontalGridLines(true)
             .mouseZoomable(true)
-            .x(d3.time.scale().domain([new Date("2009/8/9"),new Date("2009/8/12")]))
+            .x(d3.time.scale().ordinal().domain(return d.timeAllparse; ))
             .xUnits(d3.time.hours)
             .brushOn(true)
             .xAxis().ticks(10);
