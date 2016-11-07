@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>災情儀錶板</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="index.css">
+    <link type="text/css" rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="./css/dc.css" />
+    <link type="text/css" rel="stylesheet" href="./css/leaflet.css" />
+    <link type="text/css" rel="stylesheet" href="./css/leaflet-legend.css" />
+    <link type="text/css" rel="stylesheet" href="./css/MarkerCluster.Default.css" />
+    <link type="text/css" rel="stylesheet" href="./css/MarkerCluster.css" />
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="mk_index.js"></script>
+    <script type="text/javascript" src="./js/d3.js"></script>
+    <script type="text/javascript" src="./js/crossfilter.js"></script>
+    <script type="text/javascript" src="./js/leaflet.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/dc.js"></script>
+    <script type="text/javascript" src="./js/dc.leaflet.js"></script>
+    <script type="text/javascript" src="./js/leaflet.markercluster.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div><a href="javascript:dc.filterAll(); dc.renderAll();" class="reset">Reset All</a></div>
+            <div id='map'></div>
+            <div class="dis_pie" id='dis_pie'></div>
+            <div class="dis_county" id="chart-row-county"></div>
+            <!-- Data Count -->
+            <div class="data_count">
+                <a class="filter-count" id="filter-data-count"></a>
+                <a class="total-count" id="data-count"></a>
+                <!--<span class="filter-count"></span> selected out of <span class="total-count"></span> records | <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a> -->
+                <!-- <span class="filter-count"></span><span class="total-count"></span> -->
+            </div>
+            <div class="dis_time" id='dis_time'></div>
+
+        </div>
+        <div class="row">
+            <!-- Table Chart -->
+            <div class="table">
+                <div>
+                    <strong id="tableName">Disaster Situation</strong>
+                </div>
+                <table class="table table-hover dc-data-table" id="dc-table-graph">
+                    <thead>
+                        <tr class="header">
+                            <th class="dis_table_th_width">County</th>
+                            <th class="dis_table_th_width">Town</th>
+                            <th class="dis_table_th_width">Date</th>
+                            <th class="dis_table_th_width">Time</th>
+                            <th class="dis_table_th_width">Type</th>
+                            <th class="dis_table_th_situationwidth">Situation</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <!-- Table Chart -->
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+</body>

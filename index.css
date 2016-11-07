@@ -1,0 +1,231 @@
+html, body{
+    width:100%;
+    height:100%;
+    background-color: rgba(255,0,0,0.0) !important;
+    font-family: "Microsoft JhengHei";
+position:relative;
+}
+
+
+
+div.frame{
+  width:100%;
+  height: 100%;
+  overflow-x: scroll;
+  overflow-y: scroll;
+  margin-left: 5px;
+  position:relative;
+
+
+}
+
+/*div.leftside{
+  position:absolute;
+  top:0;
+  left:0;
+}
+div.rightside{
+  position: absolute;
+   top:0;
+  left:225px;
+}
+*/
+
+div.table{
+  display: block;
+  margin-top: 15px;
+}
+
+.bigheader{
+    width: 1029px;
+    height:8%;
+    background-color: white;/*#980000, #2F358C*/
+
+}
+
+
+.leaflet-container {
+  background-color: rgba(255,0,0,0.0) !important;
+}
+/*.maintitle.col-lg-12{
+   width: 1029px;
+   height:8%;
+   line-height: 50px;
+   text-align: center;
+
+   font-size: 26px;
+   font-family: 微軟正黑體 ;
+   font-weight: bold;
+   position:absolute;
+   top:0;
+   left:0;
+}
+*/
+
+path {  stroke: white; }
+path:hover {  opacity:0.5; }
+rect:hover {  fill:#666666; }
+.axis {  font: 10px sans-serif; }
+.legend tr{    border-bottom:1px solid grey; }
+.legend tr:first-child{    border-top:1px solid grey; }
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {  display: none; }
+
+.legend{
+    margin-bottom:60px;
+    display:inline-block;
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+.legend td{
+    padding:2px 5px;
+    vertical-align:bottom;
+}
+.legendFreq, .legendPerc{
+    align:right;
+    width:40px;
+}
+.info {
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    text-align: center;
+}
+.info h4 {
+    margin: 0 0 5px;
+    color: #777;
+}
+
+.legend {
+    text-align: left;
+    line-height: 18px;
+    color: #555;
+}
+.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}
+#map {
+    width: 220px;
+    height: 401px;
+    margin-right: 3px;
+}
+
+
+#table-container{
+    border: 1px solid #BBBBBB;
+    height: 270px;
+    width: 700px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+#dc-table-graph{
+  width: 100%;
+
+}
+
+.chart-title{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+th.dis_table_th_width{
+    width:50px;
+}
+
+th.dis_table_th_situationwidth{
+    width:200px;
+}
+
+td.dc-table-label{
+  background-color: #d9edf7
+}
+
+.info {
+  padding: 6px 8px ;
+  font: 14px/16px Arial, Helvetica, sans-serif ;
+  background: white ;
+  background: rgba(255,255,255,0.8);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  text-align: center;
+  margin: 0px ;
+}
+.info h4 {
+  margin: 0 0 5px ;
+  color: #333333 ;
+}
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 8px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
+
+
+a.reset:link, a.reset:visited {
+    background-color:#999999 ;
+    color: white;
+    font-size: 14px;
+    padding: 8px 82px 6px 82px;
+    margin-bottom: 2px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+a.reset:hover, a.reset:active {
+    background-color:#c0c0c0 ;
+}
+
+div.data_count{
+  margin-top: 40px;
+  float: right;
+}
+#filter-data-count{
+  font-size:80px;
+  margin-top:60px;
+}
+
+#dis_time .x.axis text {
+    text-anchor: end !important;
+    transform: rotate(-28deg);
+}
