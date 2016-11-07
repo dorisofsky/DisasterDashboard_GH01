@@ -7,16 +7,18 @@ function draw(){
 var csv = d3.dsv(",","text/csv;charset=big5");
       csv("nfa2.csv", function(data){
 
+
         var timeAllparse = d3.time.format("%Y/%m/%e %H:%M").parse, //修改
             dateformat = d3.time.format("%Y/%m/%d"), //新增
             timeformat = d3.time.format("%H:%M"); //新增
 
-
         data.forEach(function(d){
-            
-            d.Time=timeAllparse(d.Time);
-            d.date=dateformat(d.Time); //新增
+            d.parseTime=timeAllparse(d.Time);
+            d.date=dateformat(d.parseTime); //新增
+            d.tt=timeformat(d.parseTime); //新增
         });
+
+
 
         var ndx = crossfilter(data);
         var townId = ndx.dimension(function(d) { return d["TOWN_ID"]; });
@@ -25,8 +27,8 @@ var csv = d3.dsv(",","text/csv;charset=big5");
         var facilitiesGroup = facilities.group().reduceCount();
         var disastertypes = ndx.dimension(function(d){return d["disastertype"];});
         var disastertypesGroup = disastertypes.group().reduceCount();
-        var volumebytime = ndx.dimension(function(d) { return d3.time.hour(d.Time); });
-        //var volumebytimeGroup = volumebytime.group().reduceCount(function(d){return d.Time;})
+        var volumebytime = ndx.dimension(function(d) { return d3.time.hour(d.parseTime); });
+        //var volumebytimeGroup = volumebytime.group().reduceCount(function(d){return d.parseTime;})
         var value_Flood=volumebytime.group().reduceSum(function(d){return d.Flood;});
         var value_Landslide=volumebytime.group().reduceSum(function(d){return d.Landslide;});
         var value_Traffic=volumebytime.group().reduceSum(function(d){return d.Traffic;});
@@ -127,7 +129,7 @@ var csv = d3.dsv(",","text/csv;charset=big5");
                 function(d){ return d.situation;},
               ])
             .sortBy(function(d){
-                return d.Time;
+                return d.parseTime;
               })
             .order(d3.ascending);
 
