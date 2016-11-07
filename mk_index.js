@@ -8,7 +8,7 @@ var csv = d3.dsv(",","text/csv;charset=big5");
       csv("nfa2.csv", function(data){
 
         var timeparse = d3.time.format("%Y/%m/%e %H:%M").parse,
-            dateformat = d3.time.format("%Y/%m/%e");
+            dateformat = d3.time.format("%Y/%m/%d");
 
 
         data.forEach(function(d){
