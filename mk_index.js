@@ -7,10 +7,10 @@ function draw(){
 var csv = d3.dsv(",","text/csv;charset=big5");
       csv("nfa2.csv", function(data){
 
-        var timeformat = d3.time.format("%Y/%m/%e %H:%M").parse;
+        var timeparse = d3.time.format("%Y/%m/%e %H:%M").parse;
 
         data.forEach(function(d){
-          d.Time=timeformat(d.Time);
+          d.Time=timeparse(d.Time);
         });
 
         var ndx = crossfilter(data);
