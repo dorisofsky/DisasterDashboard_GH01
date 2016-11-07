@@ -118,7 +118,7 @@ var csv = d3.dsv(",","text/csv;charset=big5");
         var dataTable = dc.dataTable('#dc-table-graph')
             .width(680)
             .dimension(townId)
-            .group(function (d) {return d.Day; })
+            .group(function (d) {return d.date; })
             .size(Infinity)
             .columns([
                 function(d){ return d.C_Name;},
