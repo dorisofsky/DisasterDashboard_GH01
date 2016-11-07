@@ -7,13 +7,15 @@ function draw(){
 var csv = d3.dsv(",","text/csv;charset=big5");
       csv("nfa2.csv", function(data){
 
-        var timeparse = d3.time.format("%Y/%m/%e %H:%M").parse,
-            dateformat = d3.time.format("%Y/%m/%d");
+        var timeparse = d3.time.format("%Y/%m/%e %H:%M").parse, //修改
+            dateformat = d3.time.format("%Y/%m/%d"), //新增
+            dateformat = d3.time.format("%H:%M"); //新增
 
 
         data.forEach(function(d){
-            d.date=dateformat(timeparse(d.Time));
+            
             d.Time=timeparse(d.Time);
+            d.date=dateformat(d.Time); //新增
         });
 
         var ndx = crossfilter(data);
