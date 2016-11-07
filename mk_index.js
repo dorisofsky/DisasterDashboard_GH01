@@ -75,7 +75,7 @@ var csv = d3.dsv(",","text/csv;charset=big5");
             .elasticY(true)
             .renderHorizontalGridLines(true)
             .mouseZoomable(true)
-            .x(d3.time.scale().ordinal().domain(function(d) {return d.timeAllparse; }));
+            .x(d3.time.scale().ordinal().domain(function(d) {return d.timeAllparse; }))
             .xUnits(d3.time.hours)
             .brushOn(true)
             .xAxis().ticks(10);
