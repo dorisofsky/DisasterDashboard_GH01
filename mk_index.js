@@ -119,7 +119,7 @@ var csv = d3.dsv(",","text/csv;charset=big5");
             .columns([
                 function(d){ return d.C_Name;},
                 function(d){ return d.T_Name;},
-                function(d){ return d.Day;},
+                function(d){ return d.date;},
                 function(d){ return d.Hour2;},
                 function(d){ return d.disastertype;},
                 function(d){ return d.situation;},
