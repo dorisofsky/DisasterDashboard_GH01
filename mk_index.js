@@ -39,7 +39,8 @@ var csv = d3.dsv(",","text/csv;charset=big5");
         var colorScale = d3.scale.ordinal().domain(["Flood", "Landslide", "Traffic", "Flood&Landslide", "Flood&Traffic", "Traffic&Landslide", "Flood&Traffic&Landslide"])
                                            .range(["#14999e", "#ECA400", "#E85F5C","#999999","#999999","#999999","#999999"]);
 
-
+        var minHour = hourdim.bottom(1)[0].parseTime;
+        var maxHour = hourdim.top(1)[0].parseTime;
 
 
         var MKmarker = dc_leaflet.markerChart("#map")
@@ -78,7 +79,7 @@ var csv = d3.dsv(",","text/csv;charset=big5");
             .elasticY(true)
             .renderHorizontalGridLines(true)
             .mouseZoomable(true)
-            .x(d3.time.scale().domain([new Date("2009/8/9"),new Date("2009/8/12")]))
+            .x(d3.time.scale().domain([minHour, maxHour]))
 
             .xUnits(d3.time.hours)
             .brushOn(true)
