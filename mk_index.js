@@ -27,7 +27,8 @@ var csv = d3.dsv(",","text/csv;charset=big5");
         var facilitiesGroup = facilities.group().reduceCount();
         var disastertypes = ndx.dimension(function(d){return d["disastertype"];});
         var disastertypesGroup = disastertypes.group().reduceCount();
-        var volumebytime = ndx.dimension(function(d) { return d3.time.hour(d.parseTime); });  //修改
+        //var volumebytime = ndx.dimension(function(d) { return d3.time.hour(d.parseTime); });  //修改
+        var volumebytime = ndx.dimension(return d.parseTime);  //修改
         //var volumebytimeGroup = volumebytime.group().reduceCount(function(d){return d.parseTime;})
         var value_Flood=volumebytime.group().reduceSum(function(d){return d.Flood;});
         var value_Landslide=volumebytime.group().reduceSum(function(d){return d.Landslide;});
@@ -38,8 +39,8 @@ var csv = d3.dsv(",","text/csv;charset=big5");
         var colorScale = d3.scale.ordinal().domain(["Flood", "Landslide", "Traffic", "Flood&Landslide", "Flood&Traffic", "Traffic&Landslide", "Flood&Traffic&Landslide"])
                                            .range(["#14999e", "#ECA400", "#E85F5C","#999999","#999999","#999999","#999999"]);
 
-        var minDate = transactionDate.bottom(1)[0].parseTime;
-        var maxDate = transactionDate.top(1)[0].parseTime;
+
+
 
         var MKmarker = dc_leaflet.markerChart("#map")
             .dimension(facilities)
@@ -77,7 +78,7 @@ var csv = d3.dsv(",","text/csv;charset=big5");
             .elasticY(true)
             .renderHorizontalGridLines(true)
             .mouseZoomable(true)
-            .x(d3.time.scale().domain([minDate,maxDate]))
+            .x(d3.time.scale().domain([new Date("2009/8/9"),new Date("2009/8/12")]))
 
             .xUnits(d3.time.hours)
             .brushOn(true)
