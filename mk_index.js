@@ -30,9 +30,9 @@ var csv = d3.dsv(",","text/csv;charset=big5");
         var hourdim = ndx.dimension(function(d) { return d3.time.hour(d.parseTime); });  //修改
         var timedim = ndx.dimension(function(d){return d.parseTime;});  //修改
         //var volumebytimeGroup = volumebytime.group().reduceCount(function(d){return d.parseTime;})
-        var value_Flood=hourdim.group().reduceSum(function(d){return d.Flood;});
-        var value_Landslide=hourdim.group().reduceSum(function(d){return d.Landslide;});
-        var value_Traffic=hourdim.group().reduceSum(function(d){return d.Traffic;});
+        var FloodGroup=hourdim.group().reduceSum(function(d){return d.Flood;});
+        var LandslideGroup=hourdim.group().reduceSum(function(d){return d.Landslide;});
+        var TrafficGroup=hourdim.group().reduceSum(function(d){return d.Traffic;});
         var countyDim  = ndx.dimension(function(d) {return d["C_Name"];});
         var county_Disasters=countyDim.group().reduceCount(function(d){return d.Flood+d.Landslide+d.Traffic;});
 
@@ -71,9 +71,9 @@ var csv = d3.dsv(",","text/csv;charset=big5");
             .transitionDuration(500)
             .margins({top: 0, right: 20, bottom: 30, left: 30})
             .dimension(hourdim)
-            .group(value_Flood,"Flood")
-            .stack(value_Landslide,"Landslide")
-            .stack(value_Traffic,"Traffic")
+            .group(FloodGroup,"Flood")
+            .stack(LandslideGroup,"Landslide")
+            .stack(TrafficGroup,"Traffic")
             .colors(function(disastertype){ return colorScale(disastertype); })
             .elasticY(true)
             .renderHorizontalGridLines(true)
