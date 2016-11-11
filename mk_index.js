@@ -28,7 +28,7 @@ var csv = d3.dsv(",","text/csv;charset=big5");
         var disastertypes = ndx.dimension(function(d){return d["disastertype"];});
         var disastertypesGroup = disastertypes.group().reduceCount();
         //var volumebytime = ndx.dimension(function(d) { return d3.time.hour(d.parseTime); });  //修改
-        var volumebytime = ndx.dimension(return d.parseTime);  //修改
+        var volumebytime = ndx.dimension(function(d){return d.parseTime});  //修改
         //var volumebytimeGroup = volumebytime.group().reduceCount(function(d){return d.parseTime;})
         var value_Flood=volumebytime.group().reduceSum(function(d){return d.Flood;});
         var value_Landslide=volumebytime.group().reduceSum(function(d){return d.Landslide;});
