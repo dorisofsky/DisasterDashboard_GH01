@@ -83,8 +83,8 @@ var csv = d3.dsv(",","text/csv;charset=big5");
             .x(d3.time.scale().domain([minTime, maxTime]))
             .xAxisLabel("Date")
             .centerBar(true)
-            .outerPadding(0.05)
-            .xUnits(function(d){return 62})
+            .outerPadding(0.1)
+            .xUnits(function(d){return 70})
             .brushOn(true)
             .xAxis().tickFormat(d3.time.format('%m/%e %H:%M'));
 
