@@ -71,7 +71,7 @@ var csv = d3.dsv(",","text/csv;charset=big5");
             .width(730)
             .height(180)
             .transitionDuration(500)
-            .margins({top: 0, right: 20, bottom: 30, left: 30})
+            .margins({top: 0, right: 20, bottom: 50, left: 30})
             .dimension(hourdim)
             .group(FloodGroup,"Flood")
             .stack(LandslideGroup,"Landslide")
