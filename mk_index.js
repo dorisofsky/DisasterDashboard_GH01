@@ -71,7 +71,7 @@ var csv = d3.dsv(",","text/csv;charset=big5");
             .width(730)
             .height(200)
             .transitionDuration(500)
-            .margins({top: 10, right: 20, bottom: 45, left: 30})
+            .margins({top: 5, right: 20, bottom: 45, left: 30})
             .dimension(hourdim)
             .group(FloodGroup,"Flood")
             .stack(LandslideGroup,"Landslide")
@@ -83,7 +83,7 @@ var csv = d3.dsv(",","text/csv;charset=big5");
             .x(d3.time.scale().domain([minTime, maxTime]))
             .xAxisLabel("Date")
             .centerBar(true)
-            .outerPadding(0.1)
+            .outerPadding(1)
             .xUnits(function(d){return 70})
             .brushOn(true)
             .xAxis().tickFormat(d3.time.format('%m/%e %H:%M'));
