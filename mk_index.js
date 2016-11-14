@@ -81,8 +81,7 @@ var csv = d3.dsv(",","text/csv;charset=big5");
             .renderHorizontalGridLines(true)
             .mouseZoomable(true)
             .x(d3.time.scale().domain([minTime, maxTime]))
-
-            .xUnits(d3.time.hours)
+            .xUnits(function(d){return 15})
             .brushOn(true)
             .xAxis().ticks(10);
 
