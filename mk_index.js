@@ -83,7 +83,9 @@ var csv = d3.dsv(",","text/csv;charset=big5");
             .x(d3.time.scale().domain([minTime, maxTime]))
             .xUnits(function(d){return 60})
             .brushOn(true)
-            .xAxis().ticks(10);
+            .xAxis().ticks(10)
+            .xAxisLabel("Date")
+            .centerBar(true);
 
 
         var countyRowChart = dc.rowChart("#chart-row-county")
