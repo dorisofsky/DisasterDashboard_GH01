@@ -81,10 +81,11 @@ var csv = d3.dsv(",","text/csv;charset=big5");
             .renderHorizontalGridLines(true)
             .mouseZoomable(true)
             .x(d3.time.scale().domain([minTime, maxTime]))
+            .xAxisLabel("Date")
             .xUnits(function(d){return 62})
             .brushOn(true)
             .xAxis().ticks(10)
-            .xAxisLabel("Date")
+            
             .centerBar(true);
 
 
